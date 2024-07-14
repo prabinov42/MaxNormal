@@ -25,9 +25,9 @@ Recently I have seen a number of systems that attempt to detect anomalies, wheth
 
 Of course this is a good thing to do - to make sure that if anything is out of whack that you are alerted and can investigate and take appropriate action.
 
-A common theme among these systems if the trade-off between false alarms and missing true anomalies. One approach that seems ubiquitous is that of comparing the current value to historical values (perhaps using covariates) and alerting of the current value falls outside some interval. Usually this is based on (some variant of) a t-test, and looks at the mean and (typically) a 95% confidence interval. All good.
+A common theme among these systems is the trade-off between false alarms and missing true anomalies. One approach that seems ubiquitous is that of comparing the current value to historical values and alerting of the current value falls outside some interval. Usually this is based on (some variant of) a t-test, and looks at (typically) a 95% confidence interval as determined by the mean +/- 1.96 * the standard deviation of the historical data.
 
-What isn't so good is applying the same statistical approach to the maximum (or minimum). Here we expand on the title of this post: the maximum is not normally (Gaussian) distributed, and so systems that look at the average maximum over history and compare it to the current maximum and alert if the current values falls outside a 95% confidence interval, determined by the mean of the max values +/+ 1.96 * the standard deviation of the historical maxima, is not correct.
+What isn't so good is applying the same statistical approach to the maximum (or minimum). Here we expand on the title of this post: the maximum is not normally (Gaussian) distributed, and so systems that look at the average maximum over history and compare it to the current maximum and alert if the current values falls outside +/1.96 sd's, is not correct.
 
 # Illustration
 
